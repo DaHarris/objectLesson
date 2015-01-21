@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ObjectLesson</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <a class="navbar-brand" href="/index">Object Lesson - Shopping Cart</a>
+  </nav>
+  <div class="container">
+
+
+<%= yield %>
+  </div>
+<footer>
+  <row>
+    <div class="col-md-2 col-md-offset-5">
+      <%= link_to "Back to Top", "#top" %>
+</footer>
+</body>
+</html>

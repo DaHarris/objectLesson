@@ -1,0 +1,28 @@
+<% @customers.each do |customers| %>
+  <h3>Customer:</h3>
+    <ul>
+      <p>
+        <li><%= customers.name %>
+    </ul>
+  <h3>Order</h3>
+    <ul>
+      <p>
+      <% customers.orders.each do |products| %>
+        <li><%= products.name %></li>
+        <ul>
+          <li>Price: <%= number_to_currency(products.price) %></li>
+          <li>Size: <%= products.size %></li>
+        </ul>
+      <% end %>
+      </p>
+    </ul>
+  <h3> Total Price </h3>
+  <p>
+    <ul>
+      <li>PreTax: <% orderPrice = Order.new.get_total(customers.orders) %>
+                  <%= number_to_currency(orderPrice) %></li>
+      <li>PostTax: <%= number_to_currency(orderPrice*customers.taxPercentage) %></li>
+    </ul>
+  </p>
+  <hr>
+<%end %>
