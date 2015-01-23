@@ -30,10 +30,14 @@ class WelcomeController < ApplicationController
       @customer3.taxPercentage = 1.19
       @customer3.orders = [@product]
 
-      @customers = [@customer, @customer2, @customer3]
+      @customer4 = Customer.new
+      @customer4.name = 'Some fucking guy'
+      @customer4.taxPercentage = 1.14
+      @customer4.orders = [@product3, @product3, @product2]
+
+      @customers = [@customer, @customer2, @customer3, @customer4]
 
       @order = Order.new
-      @order.total = Order.new.get_total(@customer.orders)
   end
 
 end
